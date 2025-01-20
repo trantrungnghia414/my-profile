@@ -9,9 +9,9 @@ const themeToggle = document.querySelector(".theme-toggle");
 const body = document.body;
 
 // Kiểm tra theme đã lưu trong localStorage khi trang web load
-document.addEventListener('DOMContentLoaded', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
         body.setAttribute("data-theme", "dark");
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
     }
@@ -22,11 +22,11 @@ themeToggle.addEventListener("click", () => {
     if (body.getAttribute("data-theme") === "dark") {
         body.removeAttribute("data-theme");
         themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem("theme", "light");
     } else {
         body.setAttribute("data-theme", "dark");
         themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem("theme", "dark");
     }
 });
 
