@@ -37,14 +37,45 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
 });
 
-// Form Submission
-const contactForm = document.querySelector(".contact-form");
+// Khởi tạo EmailJS
+(function () {
+    emailjs.init("QUjUWCuIm9YgGteuV"); // Thay trực tiếp public key vào
+})();
+
+// Form Submission with EmailJS
+const contactForm = document.querySelector("#contactForm");
 
 contactForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    // Add your form submission logic here
-    alert("Message sent successfully!");
-    contactForm.reset();
+
+    const submitBtn = contactForm.querySelector("button");
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = "Sending...";
+    submitBtn.disabled = true;
+
+    const templateParams = {
+        from_name: document.querySelector("#name").value,
+        from_email: document.querySelector("#email").value,
+        message: document.querySelector("#message").value,
+    };
+
+    emailjs
+        .send("service_vk1kxz1", "template_e1jr7up", templateParams)
+        .then(
+            function (response) {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Message sent successfully!");
+                contactForm.reset();
+            },
+            function (error) {
+                console.log("FAILED...", error);
+                alert(`Failed to send message: ${error.text}`);
+            }
+        )
+        .finally(() => {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        });
 });
 
 // Scroll Animation for Skill Bars

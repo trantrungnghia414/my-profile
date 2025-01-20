@@ -213,26 +213,96 @@ body {
 }
 
 .skill-category h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
     color: var(--primary-color);
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-    text-align: center;
 }
 
-.skill-bars {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.skill-category h3 i {
+    font-size: 1.2rem;
 }
 
 .skill {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    margin-bottom: 1.5rem;
 }
 
-.skill span {
+.skill-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.percent {
+    color: var(--primary-color);
     font-weight: 500;
+}
+
+.progress-bar {
+    background: var(--secondary-bg);
+    border-radius: 10px;
+    height: 10px;
+    overflow: hidden;
+}
+
+.progress {
+    position: relative;
+    height: 100%;
+    border-radius: 10px;
+    background: linear-gradient(90deg, var(--primary-color), #27ae60);
+    transition: width 1s ease-in-out;
+}
+
+.progress-glow {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    filter: blur(2px);
+    animation: glow 1.5s infinite;
+}
+
+@keyframes glow {
+    0% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.skill-tags span {
+    background: var(--secondary-bg);
+    color: var(--primary-color);
+    padding: 0.2rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    border: 1px solid var(--primary-color);
+}
+
+.skill-category {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
 }
 
 /* Services Section */
@@ -285,42 +355,69 @@ body {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    padding: 2rem 0;
 }
 
 .portfolio-item {
     position: relative;
+    border-radius: 15px;
     overflow: hidden;
-    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    aspect-ratio: 16/9;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.portfolio-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
     height: 100%;
-    background-color: var(--overlay-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.portfolio-item:hover .portfolio-overlay {
-    opacity: 1;
+    object-fit: cover;
+    transition: transform 0.5s ease;
 }
 
 .portfolio-item:hover img {
     transform: scale(1.1);
+    filter: blur(1px);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9),
+        rgba(0, 0, 0, 0.5),
+        transparent
+    );
+    padding: 2rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    transform: translateY(0);
+}
+
+.portfolio-overlay h3 {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio-overlay p {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 600;
 }
 
 /* Contact Section */
@@ -509,6 +606,15 @@ footer {
     .skill-category {
         padding: 1.5rem;
     }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .portfolio-item {
+        aspect-ratio: 16/10;
+    }
 }
 
 .project-link {
@@ -526,5 +632,28 @@ footer {
 }
 
 .project-link i {
+    font-size: 1.1rem;
+}
+
+.portfolio-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: var(--primary-color);
+    transition: all 0.3s ease;
+}
+
+.portfolio-link:hover {
+    background: #27ae60;
+    transform: translateY(-2px);
+}
+
+.portfolio-link i {
     font-size: 1.1rem;
 }
