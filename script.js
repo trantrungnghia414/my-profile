@@ -1,3 +1,6 @@
+// Import cấu hình từ config.js
+import emailConfig from "./config.js";
+
 // Initialize AOS
 AOS.init({
     duration: 1000,
@@ -51,7 +54,7 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 
 // Khởi tạo EmailJS
 (function () {
-    emailjs.init("QUjUWCuIm9YgGteuV"); // Thay trực tiếp public key vào
+    emailjs.init(emailConfig.publicKey); // Sử dụng public key từ config.js
 })();
 
 // Form Submission with EmailJS
@@ -72,7 +75,7 @@ contactForm.addEventListener("submit", (e) => {
     };
 
     emailjs
-        .send("service_vk1kxz1", "template_e1jr7up", templateParams)
+        .send(emailConfig.serviceID, emailConfig.templateID, templateParams) // Sử dụng service ID và template ID từ config.js
         .then(
             function (response) {
                 console.log("SUCCESS!", response.status, response.text);

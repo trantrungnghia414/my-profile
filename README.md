@@ -65,18 +65,19 @@ portfolio/
 
 ## 🎯 Sections
 
-- **Home** - Introduction and social links
-- **About** - Education and experience timeline
-- **Skills** - Technical skills with progress bars
-- **Portfolio** - Featured projects with links
-- **Contact** - Contact form and information
+-   **Home** - Introduction and social links
+-   **About** - Education and experience timeline
+-   **Skills** - Technical skills with progress bars
+-   **Portfolio** - Featured projects with links
+-   **Contact** - Contact form and information
 
 ## 📱 Responsive Design
 
 The website is fully responsive and optimized for:
-- Desktop (1200px and above)
-- Tablet (768px to 1199px)
-- Mobile (below 768px)
+
+-   Desktop (1200px and above)
+-   Tablet (768px to 1199px)
+-   Mobile (below 768px)
 
 ## 🌐 Live Demo
 
@@ -87,9 +88,9 @@ Visit the live website: [Portfolio Demo](https://trungnghia03tv.vercel.app/)
 1. Create an EmailJS account
 2. Set up an email service
 3. Create an email template with variables:
-   - {{from_name}}
-   - {{from_email}}
-   - {{message}}
+    - {{from_name}}
+    - {{from_email}}
+    - {{message}}
 4. Update environment variables
 
 ## 🤝 Contributing
@@ -103,9 +104,11 @@ This project is [MIT](./LICENSE) licensed.
 ## 👨‍💻 Author
 
 **Tran Trung Nghia**
-- GitHub: [@trantrungnghia414](https://github.com/trantrungnghia414)
-- Facebook: [Trung Nghia](https://www.facebook.com/lucky.nghia.5)
-- Instagram: [@trantrungnghia03](https://www.instagram.com/trantrungnghia03/)
+
+-   GitHub: [@trantrungnghia414](https://github.com/trantrungnghia414)
+-   Facebook: [Trung Nghia](https://www.facebook.com/lucky.nghia.5)
+-   Instagram: [@trantrungnghia03](https://www.instagram.com/trantrungnghia03/)
 
 ---
+
 ⭐️ From [Tran Trung Nghia](https://github.com/trantrungnghia414)
