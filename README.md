@@ -33,13 +33,16 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript. Fea
 git clone https://github.com/trantrungnghia414/my-profile.git
 ```
 
-2. Create `.env` file in root directory:
+2. Create `config.js` file in root directory:
 
 ```bash
-env
-PUBLIC_KEY=your_emailjs_public_key
-SERVICE_ID=your_emailjs_service_id
-TEMPLATE_ID=your_emailjs_template_id
+const emailConfig = {
+  publicKey: "your_emailjs_public_key",
+  serviceID: "your_emailjs_service_id",
+  templateID: "your_emailjs_template_id"
+};
+
+export default emailConfig;
 ```
 
 3. Set up EmailJS:
@@ -47,7 +50,7 @@ TEMPLATE_ID=your_emailjs_template_id
     - Sign up at [EmailJS](https://www.emailjs.com/)
     - Create an Email Service
     - Create an Email Template
-    - Copy your API keys to `.env` file
+    - Copy your API keys to `config.js` file
 
 4. Open `index.html` in your browser or use a live server
 
@@ -59,7 +62,7 @@ portfolio/
 ├── styles.css # Stylesheet
 ├── script.js # JavaScript functionality
 ├── img/ # Image assets
-├── .env # Environment variables
+├── config.js # Environment variables
 └── README.md # Project documentation
 ```
 
